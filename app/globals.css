@@ -1,26 +1,90 @@
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
-
 @theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  --color-ivory: #f8f4ee;
+  --color-paper: #efe8e0;
+  --color-blush: #f2d9d6;
+  --color-rose: #d49a98;
+  --color-rose-deep: #b97876;
+  --color-brown: #8a6a5a;
+  --color-gray: #8f8b87;
+  --color-ink: #2b201d;
+
+  --font-script: var(--font-pinyon), "Snell Roundhand", cursive;
+  --font-serif: var(--font-cormorant), Georgia, "Times New Roman", serif;
+  --font-sans: var(--font-jost), system-ui, -apple-system, "Segoe UI", sans-serif;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+html {
+  scroll-behavior: smooth;
+  -webkit-text-size-adjust: 100%;
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  background-color: var(--color-ivory);
+  color: var(--color-ink);
+  font-family: var(--font-sans);
+  line-height: 1.7;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Tekstur kertas: noise SVG sangat tipis, tanpa file gambar tambahan */
+.paper {
+  background-color: var(--color-ivory);
+  background-image:
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='220' height='220'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='3' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 0.45 0 0 0 0 0.35 0 0 0 0 0.3 0 0 0 0.07 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E"),
+    radial-gradient(ellipse at 20% 10%, rgba(242, 217, 214, 0.35), transparent 55%),
+    radial-gradient(ellipse at 85% 90%, rgba(138, 106, 90, 0.08), transparent 60%);
+}
+
+/* Pemisah garis-titik seperti ornamen "Akad Nikah" di undangan fisik */
+.divider-dot {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  color: var(--color-brown);
+}
+.divider-dot::before,
+.divider-dot::after {
+  content: "";
+  flex: 1;
+  height: 1px;
+  background: currentColor;
+  opacity: 0.55;
+}
+.divider-dot > span {
+  width: 6px;
+  height: 6px;
+  border-radius: 9999px;
+  background: currentColor;
+}
+
+/* Watercolor blush */
+.watercolor {
+  background: radial-gradient(closest-side, rgba(226, 120, 160, 0.45), rgba(242, 217, 214, 0.25) 60%, transparent);
+  filter: blur(28px);
+}
+
+/* Aksesibilitas: hormati preferensi pengurangan gerak */
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+:focus-visible {
+  outline: 2px solid var(--color-rose-deep);
+  outline-offset: 3px;
+}
+
+/* Gerak melayang pelan untuk bunga dan pita */
+@keyframes float-slow {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-8px); }
+}
+.float-slow {
+  animation: float-slow 7s ease-in-out infinite;
 }
