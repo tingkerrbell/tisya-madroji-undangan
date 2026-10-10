@@ -1,14 +1,22 @@
 // app/layout.tsx
 import type { Metadata, Viewport } from "next";
-import { Pinyon_Script, Cormorant_Garamond, Jost } from "next/font/google";
+import localFont from "next/font/local";
+import { Cormorant_Garamond, Jost, Noto_Serif} from "next/font/google";
 import { WEDDING } from "@/lib/wedding-data";
 import "./globals.css";
 
-const pinyon = Pinyon_Script({
-  weight: "400",
-  subsets: ["latin"],
+const pinyon = localFont({
+  src: "../font/PinyonScript-Regular.ttf",
   variable: "--font-pinyon",
   display: "swap",
+  weight: "400",
+});
+
+const beau = localFont({
+  src: "../font/BeauRivage-Regular.ttf",
+  variable: "--font-beau",
+  display: "swap",
+  weight: "400",
 });
 
 const cormorant = Cormorant_Garamond({
@@ -24,6 +32,12 @@ const jost = Jost({
   display: "swap",
 });
 
+const noto_serif = Noto_Serif({
+  weight: "400",
+  subsets: ["latin"],
+  variable: "--font-noto-serif",
+  display: "swap",
+});
 const siteUrl = process.env.NEXT_PUBLIC_SITE_URL ?? "http://localhost:3000";
 
 export const metadata: Metadata = {
@@ -47,7 +61,8 @@ export const viewport: Viewport = {
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="id" className={`${pinyon.variable} ${cormorant.variable} ${jost.variable}`}>
+    <html lang="id" className={`${pinyon.variable} ${beau.variable} ${cormorant.variable} ${jost.variable} ${noto_serif.variable}`}>
+
       <body>{children}</body>
     </html>
   );

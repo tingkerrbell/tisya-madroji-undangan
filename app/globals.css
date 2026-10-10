@@ -13,6 +13,8 @@
   --font-script: var(--font-pinyon), "Snell Roundhand", cursive;
   --font-serif: var(--font-cormorant), Georgia, "Times New Roman", serif;
   --font-sans: var(--font-jost), system-ui, -apple-system, "Segoe UI", sans-serif;
+  --font-skuy: var(--font-noto-serif), "Noto Serif", Georgia, "Times New Roman", skuy;
+  --font-beau: var(--font-beau), "Beau Rivage", Georgia, "Times New Roman", beau;
 }
 
 html {
@@ -21,18 +23,73 @@ html {
 }
 
 body {
-  background-color: var(--color-ivory);
+  background-color: var(--color-paper);
   color: var(--color-ink);
   font-family: var(--font-sans);
-  line-height: 1.7;
+  line-height: 1.7; 
   -webkit-font-smoothing: antialiased;
 }
+/* Pengaturan umum background section */
+.bg-hero,
+.bg-countdown,
+.bg-quote,
+.bg-couple,
+.bg-event,
+.bg-location,
+.bg-rsvp,
+.bg-wishes,
+.bg-families,
+.bg-footer {
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
 
+/* Background masing-masing section */
+.bg-hero {
+  background-image: url("/images/bg-2.jpg");
+}
+
+.bg-countdown {
+  background-image: url("/images/bg-2.jpg");
+}
+
+.bg-quote {
+  background-image: url("/images/bg-2.jpg");
+}
+
+.bg-couple {
+  background-image: url("/images/bg-2.jpg");
+}
+
+.bg-event {
+  background-image: url("/images/bg-2.jpg");
+}
+
+.bg-location {
+  background-image: url("/images/bg-2.jpg");
+}
+
+.bg-rsvp {
+  background-image: url("/images/bg-2.jpg");
+}
+
+.bg-wishes {
+  background-image: url("/images/bg-2.jpg");
+}
+
+.bg-families {
+  background-image: url("/images/bg-2.jpg");
+}
+
+.bg-footer {
+  background-image: url("/images/bg-footer.jpg");
+}
 /* Tekstur kertas: noise SVG sangat tipis, tanpa file gambar tambahan */
 .paper {
   background-color: var(--color-ivory);
   background-image:
-    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='220' height='220'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='3' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 0.45 0 0 0 0 0.35 0 0 0 0 0.3 0 0 0 0.07 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E"),
+    url("data:images/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='220' height='220'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='3' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 0.45 0 0 0 0 0.35 0 0 0 0 0.3 0 0 0 0.07 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E"),
     radial-gradient(ellipse at 20% 10%, rgba(242, 217, 214, 0.35), transparent 55%),
     radial-gradient(ellipse at 85% 90%, rgba(138, 106, 90, 0.08), transparent 60%);
 }
@@ -76,15 +133,15 @@ body {
 }
 
 :focus-visible {
-  outline: 2px solid var(--color-rose-deep);
+  outline: 5px solid var(--color-rose-deep);
   outline-offset: 3px;
 }
 
 /* Gerak melayang pelan untuk bunga dan pita */
 @keyframes float-slow {
   0%, 100% { transform: translateY(0); }
-  50% { transform: translateY(-8px); }
+  50% { transform: translateY(-10px); }
 }
 .float-slow {
-  animation: float-slow 7s ease-in-out infinite;
+  animation: float-slow 2s ease-in-out infinite;
 }

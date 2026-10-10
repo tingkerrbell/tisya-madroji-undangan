@@ -6,7 +6,8 @@ import Reveal from "@/components/ui/reveal";
 import Section from "@/components/ui/section";
 import Toast, { type ToastState } from "@/components/ui/toast";
 import { sanitizeGuestName } from "@/lib/utils";
-
+import { motion } from "framer-motion";
+import Floral from "@/components/ui/floral";
 type Attendance = "hadir" | "tidak_hadir";
 
 const field =
@@ -79,10 +80,36 @@ export default function RSVP() {
 
   return (
     <Section id="rsvp">
+      {/* Satu ornamen bunga */}
+      <motion.div
+        className="pointer-events-none absolute inset-x-0 top-[-130px] z-[1] mx-auto h-64 w-full max-w-[900px] px-2 sm:top-[-150px] sm:h-80 sm:px-6"
+        initial={{ opacity: 0, y: 20 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true }}
+        transition={{
+          duration: 1.2,
+          ease: [0.22, 1, 0.36, 1],
+        }}
+      >
+        <motion.div
+          className="relative h-full w-full"
+          animate={{ y: [0, -3, 0] }}
+          transition={{
+            duration: 5,
+            repeat: Infinity,
+            ease: "easeInOut",
+          }}
+        >
+          <Floral
+            src="/images/floral/datar.png"
+            className="h-full w-full"
+          />
+        </motion.div>
+      </motion.div>
       <Toast toast={toast} onClose={closeToast} />
 
       <Reveal>
-        <h2 className="font-serif text-sm uppercase tracking-[0.35em] text-brown">Konfirmasi Kehadiran</h2>
+        <h2 className="font-skuy text-sm uppercase tracking-[0.35em] text-brown font-bold">Konfirmasi Kehadiran</h2>
         <p className="mx-auto mt-4 max-w-sm text-sm text-brown">
           Merupakan kehormatan bagi kami apabila Bapak/Ibu/Saudara/i berkenan hadir dan memberikan doa restu.
         </p>

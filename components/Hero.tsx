@@ -6,9 +6,17 @@ import Reveal from "@/components/ui/reveal";
 import { WEDDING } from "@/lib/wedding-data";
 import Parallax from "./ui/parallax";
 
+
 export default function Hero() {
   return (
-    <section className="paper relative flex min-h-[100svh] items-center justify-center overflow-hidden px-6 py-20 text-center">
+    <section
+      id="hero"
+      className="paper relative flex min-h-[100svh] items-center justify-center overflow-hidden bg-cover bg-center bg-no-repeat px-6 py-20 text-center"
+      style={{
+        backgroundImage:
+          "linear-gradient(rgba(248, 242, 235, 0.25), rgba(248, 242, 235, 0.25)), url('/images/bg-2.jpg')",
+      }}
+    >
       {/* Soft background */}
       <div
         className="watercolor pointer-events-none absolute -right-20 top-10 h-72 w-72"
@@ -177,13 +185,13 @@ export default function Hero() {
 
       <div className="relative z-10 max-w-3xl">
         <Reveal>
-          <p className="font-serif text-sm uppercase tracking-[0.4em] text-brown">
+          <p className="font-skuy text-sm uppercase tracking-[0.4em]  text-brown">
             The Wedding of
           </p>
         </Reveal>
 
         <Reveal delay={0.15}>
-          <h2 className="mt-5 font-script text-7xl leading-[1.05] sm:text-9xl">
+          <h2 className="mt-10 font-script text-7xl leading-[1.05] sm:text-9xl">
             {WEDDING.bride.shortName}
 
             <span className="block font-serif text-3xl text-rose-deep">
@@ -195,7 +203,7 @@ export default function Hero() {
         </Reveal>
 
         <Reveal delay={0.3}>
-          <div className="mx-auto mt-10 w-fit border-y border-brown/40 py-4 font-serif tracking-[0.3em]">
+          <div className="mx-auto mt-10 w-fit border-y border-brown/40 py-4 font-skuy tracking-[0.3em]">
             <p className="text-sm">MINGGU</p>
             <p className="text-3xl">08 NOVEMBER</p>
             <p className="text-sm">2026</p>

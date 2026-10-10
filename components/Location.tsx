@@ -16,7 +16,7 @@ export default function Location() {
     `https://www.google.com/maps/search/?api=1&query=${query}`;
 
   return (
-  <Section id="lokasi" className="!pt-1">
+  <Section id="bg-location" className="bg-location !pt-1">
       {/* =========================
           JUDUL LOKASI
          ========================= */}
@@ -27,7 +27,7 @@ export default function Location() {
           aria-hidden
         />
 
-        <h2 className="mt-3 font-serif text-sm uppercase tracking-[0.35em] text-brown">
+        <h2 className="mt-3 font-skuy text-sm uppercase tracking-[0.35em] text-brown font-bold">
           Lokasi Acara
         </h2>
       </Reveal>

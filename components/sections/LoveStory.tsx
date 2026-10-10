@@ -32,11 +32,11 @@ export default function LoveStory() {
   return (
     <Section id="love-story" className="bg-paper/60">
       <Reveal>
-        <p className="font-serif text-sm uppercase tracking-[0.35em] text-brown">
+        <p className="font-skuy text-sm uppercase tracking-[0.35em] text-brown font-bold">
           Our Journey
         </p>
 
-        <h2 className="mt-3 font-script text-6xl text-rose-deep">
+        <h2 className="mt-10 font-script text-6xl text-rose-deep">
           Love Story
         </h2>
 
@@ -59,11 +59,11 @@ export default function LoveStory() {
               <article className="relative">
                 <div className="absolute left-[calc(100%+0.75rem)] top-1/2 h-3 w-3 -translate-y-1/2 rounded-full border-2 border-rose-deep bg-paper" />
 
-                <p className="font-serif text-sm tracking-[0.25em] text-rose-deep">
+                <p className="font-skuy text-sm tracking-[0.25em] text-rose-deep font-bold">
                   {story.year}
                 </p>
 
-                <h3 className="mt-2 font-script text-4xl">
+                <h3 className="mt-2 font-beau text-3xl text-rose-deep font-medium">
                   {story.title}
                 </h3>
 

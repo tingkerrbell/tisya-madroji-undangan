@@ -7,7 +7,7 @@ import Floral from "@/components/ui/floral";
 import { WEDDING } from "@/lib/wedding-data";
 import { sanitizeGuestName } from "@/lib/utils";
 
-type Props = {
+type Props = { 
   opened: boolean;
   onOpen: () => void;
   onExited: () => void;
@@ -32,26 +32,18 @@ export default function Opening({ opened, onOpen, onExited }: Props) {
       <div className="watercolor pointer-events-none absolute -bottom-20 -right-16 h-72 w-72 opacity-70" aria-hidden />
 
       {/* Ornamen: ganti file PNG di public/images/floral/ */}
-      <Floral
-        src="/images/floral/corner.png"
-        className="float-slow absolute -left-6 -top-4 h-56 w-56 sm:h-80 sm:w-80"
-      />
-      <Floral
-        src="/images/floral/ribbon.png"
-        className="absolute -bottom-6 -right-6 h-48 w-48 sm:h-72 sm:w-72"
-      />
 
       <div className="relative z-10 flex flex-col items-center">
-        <p className="font-serif text-sm uppercase tracking-[0.4em] text-brown">The Wedding of</p>
+        <p className="font-serif-bold text-sm uppercase tracking-[0.5em] text-brown">The Wedding of</p>
 
-        <h1 className="mt-4 font-script text-7xl leading-[1.05] sm:text-8xl">
+        <h1 className="mt-4 font-script text-8xl leading-[1.05] sm:text-8xl">
           {WEDDING.bride.shortName}
-          <span className="block font-serif text-3xl text-rose-deep">&amp;</span>
+          <span className="mt-10 block font-serif text-3xl text-rose-deep">&amp;</span>
           {WEDDING.groom.shortName}
         </h1>
 
-        <p className="mt-6 font-serif text-lg tracking-[0.3em]">
-          {WEDDING.coverDate.replaceAll("-", " · ")}
+        <p className="mt-8 font-sans-serif text-lg tracking-[0.3em]">
+          {WEDDING.coverDate.replaceAll("-", " - ")}
         </p>
 
         <div className="mt-12">

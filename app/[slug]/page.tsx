@@ -15,6 +15,8 @@ import RSVP from "@/components/RSVP";
 import Wishes from "@/components/Wishes";
 import { WEDDING } from "@/lib/wedding-data";
 import LoveStory from "@/components/sections/LoveStory";
+import PetalFall from "@/components/ui/petal-fall";
+import Navigation from "@/components/navigation";
 
 export const dynamicParams = false;
 
@@ -59,20 +61,29 @@ export default async function InvitationPage({
 
   return (
     <InvitationShell>
-      <main>
+      <Navigation />
+       <main
+        className="relative"
+        style={{
+          backgroundImage:
+            "linear-gradient(rgba(248,242,235,0.30), rgba(248,242,235,0.30)), url('/images/hero-background.jpg')",
+          backgroundSize: "100% auto",
+          backgroundPosition: "top center",
+          backgroundRepeat: "repeat-y",
+        }}
+      >
         <Hero />
         <Countdown />
         <Quote />
         <Couple />
         <Event />
         <Location />
-        <LoveStory />
         <RSVP />
         <Wishes />
-        <Gift />
         <Families />
       </main>
       <Footer />
+      <PetalFall />
     </InvitationShell>
   );
 }

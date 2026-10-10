@@ -7,7 +7,7 @@ export const WEDDING = {
   description: "Undangan Pernikahan Tisya Azzahra & Madroji - 8 November 2026",
 
   bride: {
-    shortName: "Tisya",
+    shortName: " Icha ",
     fullName: "Tisya Azzahra",
     childOrder: "Putri ke-2 dari",
     father: "Bpk. Sudarman",
@@ -15,7 +15,7 @@ export const WEDDING = {
     photo: "/images/couple/bride.jpg", // PLACEHOLDER: ganti dengan foto asli
   },
   groom: {
-    shortName: "Madroji",
+    shortName: " Oji ",
     fullName: "Madroji",
     childOrder: "Putra Tunggal dari",
     father: "Bpk. Otib",
